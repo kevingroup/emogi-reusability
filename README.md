@@ -9,7 +9,7 @@ To reproduce the results for cancer gene prediction using co-expression network,
 ```bash
 python train_EMOGI_cv.py -e 5000 -s 1 -wd 0.005 -hd 20 40 -lm 90 -cv 10 -seed ${seed} -d ./co-expression/CPDB_coexp_multiomics.h5
 ```
-
+Additional information: For the training process you would need a GPU to finsish in a reasonable time (it takes about 6 hours with one NVIDIA V100 GPU for 5000 epochs and 10-folds cross validation on the CPDB dataset, it would take a very long time running with CPU). The install time mostly depends on the network speed and normally can finish within 10 minutes. The expected outputs are the resulting model and the predictions, the training details with evaluation metrics can be found in the output log.
 #### Essential gene prediction 
 
 The input h5 data files for the essential gene prediction can be found in the `essential_gene` folder. The following command can be used to reproduce our results
@@ -17,7 +17,7 @@ The input h5 data files for the essential gene prediction can be found in the `e
 ```bash
 python train_EMOGI_cv.py -e 5000 -s 1 -wd 0.005 -hd 300 100 -lm 5 -cv 10 -seed ${seed} -d ./essential_gene/CPDB_essential_multiomics.h5
 ```
-
+Additional information: For the training process you would need a GPU to finsish in a reasonable time (it takes about 6 hours with one NVIDIA V100 GPU for 5000 epochs and 10-folds cross validation on the CPDB dataset, it would take a very long time running with CPU). The install time mostly depends on the network speed and normally can finish within 10 minutes. The expected outputs are the resulting model and the predictions, the training details with evaluation metrics can be found in the output log.
 #### Cancer gene prediction with Graph Attention Network (GAT)
 
 Here we provided two versions of GAT (one based on the original tensorflow GAT library and the other based on pytorch DGL library).
@@ -46,6 +46,6 @@ python dgl_gat_main.py \
     --seed=1  \
     --cuda \ # if you have GPU available
 ```
-
+Additional information: For the training process you would need a GPU to finsish in a reasonable time, it would take a very long time running with CPU. For the tensorflow version, it takes about 2 hours with one NVIDIA V100 GPU for 5000 epochs on the CPDB dataset. For the DGL version, it takes about 10 minutes with one NVIDIA V100 GPU for 1000 epochs on the CPDB dataset. The install time mostly depends on the network speed and normally can finish within 10 minutes. The expected outputs are the training details with evaluation metrics in the log.
 
 
