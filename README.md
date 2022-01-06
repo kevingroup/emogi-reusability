@@ -46,6 +46,6 @@ python dgl_gat_main.py \
     --seed=1  \
     --cuda \ # if you have GPU available
 ```
-Additional information: For the training process you would need a GPU to finsish in a reasonable time, it would take a very long time running with CPU. For the tensorflow version, it takes about 2 hours with one NVIDIA V100 GPU for 5000 epochs on the CPDB dataset. For the DGL version, it takes about 10 minutes with one NVIDIA V100 GPU for 1000 epochs on the CPDB dataset. The install time mostly depends on the network speed and normally can finish within 10 minutes. The expected outputs are the training details with evaluation metrics in the log.
+Additional information: For the training process you would need a GPU to finsish in a reasonable time, it would take a very long time running with CPU. For the tensorflow version, it takes about 3 hours with one NVIDIA V100 GPU for 5000 epochs on the CPDB dataset. For the DGL version, it takes about 10 minutes with one NVIDIA V100 GPU for 1000 epochs on the CPDB dataset. The install time mostly depends on the network speed and normally can finish within 10 minutes. The expected outputs are the training details with evaluation metrics in the log.
 
 
